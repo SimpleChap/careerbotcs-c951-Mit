@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+  <!-- Greeting -->
+  <category>
+    <pattern>HELLO</pattern>
+    <template>
+      <message>Hey there! I’m CareerBotCS, here to help you figure out which computer science job might suit you best.</message>
+      <message>Want to go through a quick set of questions to get a career suggestion?</message>
+      <reply>
+        <text>Yes</text>
+        <postback>START CHAT</postback>
+      </reply>
+      <reply>
+        <text>No</text>
+        <postback>EXIT CHAT</postback>
+      </reply>
+    </template>
+  </category>
+
+  <!-- If the user says no -->
+  <category>
+    <pattern>EXIT CHAT</pattern>
+    <template>
+      <message>No problem at all. Feel free to say "Hello" if you change your mind later!</message>
+    </template>
+  </category>
+
+  <!-- Start -->
+  <category>
+    <pattern>START CHAT</pattern>
+    <template>
+      <message>Awesome! First question - Do you like writing code and solving technical problems?</message>
+      <reply>
+        <text>I like coding</text>
+        <postback>CODING PATH</postback>
+      </reply>
+      <reply>
+        <text>I don’t like coding</text>
+        <postback>NON CODING PATH</postback>
+      </reply>
+    </template>
+  </category>
+
+  <!-- If they like coding -->
+  <category>
+    <pattern>CODING PATH</pattern>
+    <template>
+      <message>Nice! What would you rather spend time creating?</message>
+      <reply>
+        <text>Mobile or software apps</text>
+        <postback>ROLE DEV</postback>
+      </reply>
+      <reply>
+        <text>Websites and online tools</text>
+        <postback>ROLE WEB</postback>
+      </reply>
+    </template>
+  </category>
+
+  <!-- if they don't like coding -->
+  <category>
+    <pattern>NON CODING PATH</pattern>
+    <template>
+      <message>No worries - there are still great tech careers for you.</message>
+      <message>Which of these sounds more interesting to you?</message>
+      <reply>
+        <text>Working with numbers and patterns</text>
+        <postback>ROLE DATA</postback>
+      </reply>
+      <reply>
+        <text>Protecting systems and information</text>
+        <postback>ROLE SECURITY</postback>
+      </reply>
+      <reply>
+        <text>Keeping networks running</text>
+        <postback>ROLE NETWORK</postback>
+      </reply>
+    </template>
+  </category>
+
+  <!-- Job -->
+  <category>
+    <pattern>ROLE DEV</pattern>
+    <template>
+      <message>You’d likely enjoy being a Software Developer. You get to design, build, and improve programs that people use every day.</message>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ROLE WEB</pattern>
+    <template>
+      <message>A Web Developer role could be right for you. It mixes technical skills and design to create great user experiences on the web.</message>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ROLE DATA</pattern>
+    <template>
+      <message>You might be a great Data Scientist. This role involves analyzing data to spot trends and help people make smarter decisions.</message>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ROLE SECURITY</pattern>
+    <template>
+      <message>Cybersecurity Analyst might be a good match. You’d focus on keeping information safe and spotting possible threats.</message>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ROLE NETWORK</pattern>
+    <template>
+      <message>Network Administrator could fit you well. It’s all about keeping systems online and making sure connections stay stable.</message>
+    </template>
+  </category>
+
+  <!-- Exit -->
+  <category>
+    <pattern>EXIT</pattern>
+    <template>
+      <message>Thanks for chatting with CareerBotCS! Come back anytime by typing “Hello”.</message>
+    </template>
+  </category>
+
+  <!-- Issue -->
+  <category>
+    <pattern>*</pattern>
+    <template>
+      <message>Hmm, I didn’t get that. Try using the reply buttons or type "Hello" to restart.</message>
+    </template>
+  </category>
+
+</aiml>
